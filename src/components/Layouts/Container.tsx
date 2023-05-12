@@ -3,7 +3,7 @@ import Footer from "../uis/Footer";
 import Head from "next/head";
 import Image from "next/legacy/image";
 import NavMenu from "../uis/NavMenu";
-import PageTransition from "../uis/PageTransition";
+import PageTransition from "../animations/PageTransition";
 import { PageType } from "@/lib/types";
 import TopRays from "public/rays.png";
 import siteMetadata from "@/data/siteMetaData";
