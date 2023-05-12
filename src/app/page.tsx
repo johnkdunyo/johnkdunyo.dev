@@ -7,6 +7,31 @@ import siteMetadata from "@/data/siteMetaData";
 import Button from "@/components/uis/Button";
 import { useRouter } from "next/navigation";
 
+const SingleService = () => {
+  return (
+    <div className="w-full text-center border rounded-[20px] border-indigo-500 ">
+      <div className="m-5 mt-10">
+        <h1 className="text-xl">App Development</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+      <div className=" flex justify-center items-end -mb-8">
+        <Image
+          alt="sample"
+          src="/assets/services/illustration_bulb.png"
+          blurDataURL="/assets/services/illustration_bulb.png"
+          placeholder="blur"
+          height={300}
+          width={254}
+          className=" "
+        />
+      </div>
+    </div>
+  );
+};
+
 export default function Home() {
   const { push } = useRouter();
   return (
@@ -48,6 +73,15 @@ export default function Home() {
           </div>
         </div>
         <hr className="hr"></hr>
+        <div className="mt-10">
+          <h2>I love to share my knowledge through writing.</h2>
+          <p>Check out a few of the services I provide.</p>
+          <div className="flex flex-col md:flex-row gap-8 w-full">
+            <SingleService />
+            <SingleService />
+            <SingleService />
+          </div>
+        </div>
       </div>
     </Container>
   );

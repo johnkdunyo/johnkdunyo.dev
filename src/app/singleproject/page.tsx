@@ -129,6 +129,7 @@ const page = () => {
             <SingleTechStack value="Tailwind CSS" />
             <SingleTechStack value="Framer Motion" />
             <SingleTechStack value="Daisy UI" />
+            <SingleTechStack value="tRPC" />
           </div>
         </div>
       </main>
