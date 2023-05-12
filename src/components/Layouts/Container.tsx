@@ -1,3 +1,5 @@
+"use client";
+
 import BottomRays from "public/footer_rays.png";
 import Footer from "../uis/Footer";
 import Head from "next/head";
@@ -7,9 +9,9 @@ import PageTransition from "../animations/PageTransition";
 import { PageType } from "@/lib/types";
 import TopRays from "public/rays.png";
 import siteMetadata from "@/data/siteMetaData";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
-export function Container(props: { [x: string]: any; children: any }) {
+function Container(props: { [x: string]: any; children: any }) {
   const { children, ...customMeta } = props;
   const router = useRouter();
 
@@ -19,9 +21,6 @@ export function Container(props: { [x: string]: any; children: any }) {
     imageUrl: null,
     type: PageType.WEBSITE,
     twitterHandle: siteMetadata.twitterHandle,
-    canonicalUrl: customMeta.sponsoredArticle
-      ? customMeta.sponsoredUrl
-      : `${siteMetadata.siteUrl}${router.asPath}`,
     date: null,
     isArticle: false,
     ...customMeta,
@@ -33,10 +32,10 @@ export function Container(props: { [x: string]: any; children: any }) {
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
         <meta content={meta.description} name="description" />
-        <meta
+        {/* <meta
           property="og:url"
-          content={`${siteMetadata.siteUrl}${router.asPath}`}
-        />
+          content={`${siteMetadata.siteUrl}${router?.}`}
+        /> */}
         <meta name="application-name" content="&nbsp;" />
         <meta name="msapplication-TileColor" content="#FFFFFF" />
         <meta
@@ -59,7 +58,7 @@ export function Container(props: { [x: string]: any; children: any }) {
           name="msapplication-square310x310logo"
           content="/assets/mstile-310x310.png"
         />
-        <link rel="canonical" href={meta.canonicalUrl} />
+        {/* <link rel="canonical" href={meta.canonicalUrl} /> */}
         <meta property="og:type" content={meta.type} />
         <meta property="og:site_name" content="Braydon Coyer" />
         <meta property="og:description" content={meta.description} />
@@ -121,3 +120,5 @@ export function Container(props: { [x: string]: any; children: any }) {
     </div>
   );
 }
+
+export default Container;

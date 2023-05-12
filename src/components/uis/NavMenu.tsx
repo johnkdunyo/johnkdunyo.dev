@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useState } from "react";
 
 import DarkLogo from "public/bcoyerlogo_dark.svg";
@@ -5,7 +6,7 @@ import { Dialog } from "@headlessui/react";
 import Image from "next/image";
 import LightLogo from "public/bcoyerlogo_white.svg";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
 interface INavItmeProps {
@@ -15,7 +16,8 @@ interface INavItmeProps {
 
 function NavItem({ href, text }: INavItmeProps) {
   const router = useRouter();
-  const isActive = router.asPath === href;
+  //   const isActive = router.asPath === href;
+  const isActive = true;
 
   return (
     <Link href={href} passHref>

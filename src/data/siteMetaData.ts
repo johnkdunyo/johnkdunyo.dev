@@ -8,9 +8,9 @@ const siteMetadata = {
   siteUrl: '',
   siteRepo: 'https://github.com/johnkdunyo/johnkdunyo.dev',
   avatarImage:
-    'https://res.cloudinary.com/braydoncoyer/image/upload/v1636553710/avatar.jpg',
+    '/avatar.webp',
   socialBanner:
-    'https://res.cloudinary.com/braydoncoyer/image/upload/v1638884997/default-social-image.png',
+    '/bcoyerlogo_dark.svg',
   email: 'mailto:johnkdunyo@gmail.com',
   github: 'https://github.com/johnkdunyo',
   twitter: '',
