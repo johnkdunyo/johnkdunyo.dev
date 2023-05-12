@@ -37,11 +37,11 @@ export default function About() {
         <div className="hidden md:block md:float-left">
           <Image
             className="md:mr-8"
-            src="https://res.cloudinary.com/braydoncoyer/image/upload/v1670716662/family_photo_scs57f.jpg"
+            src="/avatar-working.png"
             placeholder="blur"
-            blurDataURL="https://res.cloudinary.com/braydoncoyer/image/upload/v1670716662/family_photo_scs57f.jpg"
-            width={340}
-            height={448}
+            blurDataURL="/avatar-working.png"
+            width={380}
+            height={428}
             alt={"article cover"}
           />
         </div>
@@ -102,10 +102,10 @@ export default function About() {
         </Button>
       </div>
       <hr className="my-16 w-full border-none text-center h-10 before:content-['∿∿∿'] before:text-[#D1D5DB] before:text-2xl"></hr>
-      <div className="mb-12">
+      {/* <div className="mb-12">
         <h2>I love to share my knowledge through writing.</h2>
         <p>Check out a few of my most recent publishings.</p>
-        {/* <ArticleList articles={recentArticles} /> */}
+        <ArticleList articles={recentArticles} />
       </div>
       <hr className="my-16 w-full border-none text-center h-10 before:content-['∿∿∿'] before:text-[#D1D5DB] before:text-2xl"></hr>
       <div className="grid grid-cols-1 md:grid-cols-5 gap-y-8 md:gap-x-12">
@@ -136,7 +136,7 @@ export default function About() {
             alt={"article cover"}
           />
         </div>
-      </div>
+      </div> */}
     </Container>
   );
 }

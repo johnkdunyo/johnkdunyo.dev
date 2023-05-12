@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { ReactNode } from "react";
+import React, { ReactNode, useCallback } from "react";
 
 import Image from "next/image";
 
@@ -13,6 +13,11 @@ const CustomLink = ({ href, children }: CustomLinkProps) => {
   let [isHovering, setIsHovering] = React.useState(false);
   let inImagePreview = false;
   let inLink = false;
+
+  const origin =
+    typeof window !== "undefined" && window.location.origin
+      ? window.location.origin
+      : "";
 
   let handleMouseEnterImage = () => {
     inImagePreview = true;
@@ -33,6 +38,22 @@ const CustomLink = ({ href, children }: CustomLinkProps) => {
     inLink = false;
     setIsHovering(inImagePreview);
   };
+
+  let handleFetchImage = useCallback(
+    async (url: string) => {
+      const res = await fetch(`${origin}/api/link-preview?url=${url}`);
+      const data = await res.json();
+      setImagePreview(data.image);
+    },
+    [origin]
+  );
+
+  React.useEffect(() => {
+    handleFetchImage(href);
+
+    return () => setImagePreview("");
+  }, [href, handleFetchImage]);
+
   return (
     <span>
       <span className="relative z-10 hidden md:inline-block">
