@@ -16,7 +16,8 @@ export default function Home() {
           <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6">
             <h1 className="order-2 col-span-5 text-4xl leading-tight md:leading-normal md:order-1 sm:text-5xl">
               I'm <span className="text-teal-500 dark:text-teal-400">John</span>
-              . I'm a software developer....
+              . I'm a software developer, system engineer and a product
+              developer
             </h1>
             <div className="order-1 md:order-2 border flex justify-center">
               <Image
@@ -34,7 +35,7 @@ export default function Home() {
           <div className="space-y-6 text-center md:text-left md:space-y-0 md:space-x-4">
             <Button
               buttonType={ButtonType.PRIMARY}
-              onButtonClick={() => push("/blog")}
+              onButtonClick={() => push("/projects")}
             >
               View my projects
             </Button>
