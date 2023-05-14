@@ -7,11 +7,14 @@ import { useRouter } from "next/navigation";
 import Image from "next/legacy/image";
 import { ButtonType } from "@/lib/types";
 import CustomLink from "@/components/uis/CustomLink";
+import { TimelineItem } from "@/components/uis/TimelineItem";
+import workExperienceData from "@/data/workExperienceData";
 
 export default function About() {
   const { push } = useRouter();
+
   return (
-    <Container title="About Me - Braydon Coyer">
+    <Container title="About Me - John Kwame Dunyo">
       <h1>
         <span className="block text-base font-semibold tracking-wide text-center text-indigo-500 uppercase dark:text-teal-400">
           About me
@@ -21,7 +24,7 @@ export default function About() {
         </span>
       </h1>
       <p>
-        I’m Braydon, a developer, ,{" "}
+        I’m John Kwame Dunyo, a developer, ,{" "}
         <CustomLink href={`${siteMetadata.siteUrl}/blog`}>blogger</CustomLink>{" "}
         and self-proclaimed designer who specializes in front-end development.
         My mission is to translate user-focussed designs into pixel-perfect
@@ -78,22 +81,22 @@ export default function About() {
       <hr className="my-16 w-full border-none text-center h-10 before:content-['∿∿∿'] before:text-[#D1D5DB] before:text-2xl"></hr>
       <div className="flex justify-center"></div>
       <div className="mt-12 space-y-6">
-        <h2 className="m-0 text-gray-900 dark:text-white">Work experience</h2>
+        <h2 className="m-0 text-gray-900 dark:text-white">Work Experience</h2>
         <p>Here's a brief rundown of my most recent experiences.</p>
-        {/* {workTimeline ? (
-          <TimelineList>
-            {workTimeline.map((workItem, index) => (
+        {workExperienceData ? (
+          <div>
+            {workExperienceData.map((workItem, index) => (
               <TimelineItem
                 key={index}
                 title={workItem.title}
                 meta={workItem.company}
-                link={workItem.company_url}
+                link={workItem.companyUrl}
                 meta_small={workItem.duration}
-                content={workItem.description}
+                description={workItem.description}
               />
             ))}
-          </TimelineList>
-        ) : null} */}
+          </div>
+        ) : null}
         <Button
           onButtonClick={() => push(siteMetadata.resume)}
           buttonType={ButtonType.PRIMARY}

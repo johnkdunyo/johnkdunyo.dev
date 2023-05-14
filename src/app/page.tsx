@@ -6,6 +6,7 @@ import Container from "@/components/Layouts/Container";
 import siteMetadata from "@/data/siteMetaData";
 import Button from "@/components/uis/Button";
 import { useRouter } from "next/navigation";
+import HorinzontalRule from "@/components/uis/HorinzontalRule";
 
 const SingleService = () => {
   return (
@@ -72,7 +73,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <hr className="hr"></hr>
+        <HorinzontalRule />
         <div className="mt-10">
           <h2>I love to share my knowledge through writing.</h2>
           <p>Check out a few of the services I provide.</p>

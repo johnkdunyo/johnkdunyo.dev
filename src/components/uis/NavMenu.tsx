@@ -50,7 +50,7 @@ function NavMenu({}) {
           <Link href="/" passHref>
             <span className="block dark:hidden">
               <Image
-                alt="Braydon Coyer"
+                alt="jon dexter "
                 height={38}
                 width={38}
                 src={DarkLogo}
@@ -62,7 +62,7 @@ function NavMenu({}) {
           <Link href="/" passHref>
             <span className="hidden dark:block">
               <Image
-                alt="Braydon Coyer"
+                alt="jon dexter "
                 height={38}
                 width={38}
                 src={LightLogo}
