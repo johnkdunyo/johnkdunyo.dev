@@ -24,17 +24,29 @@ export default function About() {
         </span>
       </h1>
       <p>
-        I’m John Kwame Dunyo, a developer, ,{" "}
-        <CustomLink href={`${siteMetadata.siteUrl}/blog`}>blogger</CustomLink>{" "}
-        and self-proclaimed designer who specializes in front-end development.
-        My mission is to translate user-focussed designs into pixel-perfect
-        websites or applications that run blazing fast.
+        I am a software engineer with a passion for creating remarkable digital
+        experiences. With 3 years of experience, I excel in full stack web and
+        application software development, specializing in Python, PHP, and
+        JavaScript (TypeScript). My focus is on creating value for customers and
+        stakeholders by leveraging technology. From product ideation to design,
+        development, and launch, I ensure a comprehensive approach that exceeds
+        customer expectations. With a strong background in software development,
+        including front-end and back-end technologies, as well as software
+        architecture and system design, I am committed to delivering
+        high-quality and high-performing products that surpass customer
+        expectations. My expertise extends to the domains of digital payments,
+        eLearning, and eCommerce, which gives me valuable insights into the
+        unique needs of these industries. I am driven by the desire to
+        revolutionize the digital landscape and leave a lasting impact on those
+        I serve
       </p>
       <p>
-        I’m currently working as a senior front end developer at{" "}
-        <CustomLink href="https://www.logicgate.com">LogicGate</CustomLink>{" "}
-        where I help develop an agile GRC cloud solution that combines powerful
-        functionality with intuitive design to enhance enterprise GRC programs.
+        I’m currently working as a software developer at{" "}
+        <CustomLink href="http://broadspectrumltd.com/">
+          Broadspectrum Ghana
+        </CustomLink>{" "}
+        where I help build fintech solutions. Our recent solution is the NEDCo
+        power purchasing platform that serves over 2 million customers in Ghana.
       </p>
       <div>
         <div className="hidden md:block md:float-left">
@@ -49,32 +61,45 @@ export default function About() {
           />
         </div>
         <p>
-          Prior to LogicGate, I worked as a senior full-stack engineer at{" "}
-          <CustomLink href="https://www.cognizant.com/us/en">
-            Cognizant
+          While at Broadspecturm, I worked as a full-stack engineer at{" "}
+          <CustomLink href="http://kurz.ai/">Kurz.ai</CustomLink> where I helped
+          build a scalable and progressive web application for learning
+          practical CNC programming for the KELLER Group in Germany.
+        </p>
+        <p>
+          Prior to joining Broaspectrum, I worked as the software lead for the
+          MEST Express startup Moreplex Company Ltd, where I helped architect
+          the company's software architectures for its growing eSkills and
+          eCommerce platforms. I also led the team to build an AI product
+          recommender system. And more recently is the yet-to-be-launched AI
+          assistant dermatologist.
+        </p>
+
+        <p>
+          I have built a couple of startups. Key among them is{" "}
+          <CustomLink href="https://farmsens.netlify.app/">FarmSens</CustomLink>
+          , the next-generation smart soil sensors with real-time farm
+          analytics. I spend most of my free time running and improving
+          FarmSens. I also love to volunteer on a number of initiatives; giving
+          back to my society, from teaching high school students Maths and
+          Science to providing technical and business mentorship to budding
+          entrepreneurs in Kumasi, Ghana.
+        </p>
+        <p>
+          I am fellow of the{" "}
+          <CustomLink href="https://resolutionproject.org/fellows/john-kwame-dunyo/">
+            Resolution Group, USA
+          </CustomLink>
+          . and the{" "}
+          <CustomLink href="https://www.queensu.ca/innovationcentre/launch/jim-leech-mastercard-foundation-fellowship-entrepreneurship">
+            Jim Leech Mastercard Enterprenuership Programm
           </CustomLink>{" "}
-          where I helped architect and develop full-stack RESTful microservices,
-          train and prepare developers for delivery, and assist in leading the
-          front-end practice in a lab-based working environment.
-        </p>
-        <p>
-          Before Cognizant, I worked as a UI Developer for{" "}
-          <CustomLink href="https://www.projekt202.com">projekt202</CustomLink>{" "}
-          helping craft design systems and building reusable component libraries
-          for multi-million dollar companies.
-        </p>
-        <p>
-          In a past life, I was an indie mobile developer making mobile games
-          for iOS and Android, with one of my games outselling Angry Birds.
+          at Queen’s University, Ontario, Canada.
         </p>
         <p>
           You can find me on <a href={siteMetadata.twitter}>Twitter</a> where I
           share tech-related tidbits and build in public, or you can follow me
-          on <CustomLink href={siteMetadata.github}>GitHub</CustomLink>. I often
-          write about my findings on my{" "}
-          <CustomLink href={`${siteMetadata.siteUrl}/blog`}>blog</CustomLink>{" "}
-          and create cool things over on I also help run a mediocre{" "}
-          <CustomLink href="https://anchor.fm/florida-man">podcast</CustomLink>.
+          on <CustomLink href={siteMetadata.github}>GitHub</CustomLink>.
         </p>
         <div></div>
       </div>
