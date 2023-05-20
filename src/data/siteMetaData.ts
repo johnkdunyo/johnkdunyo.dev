@@ -8,14 +8,14 @@ const siteMetadata = {
   siteUrl: '',
   siteRepo: 'https://github.com/johnkdunyo/johnkdunyo.dev',
   avatarImage:
-    '/avatar.webp',
+    '/johnkdunyo.jpg',
   socialBanner:
     '/bcoyerlogo_dark.svg',
   email: 'mailto:johnkdunyo@gmail.com',
   github: 'https://github.com/johnkdunyo',
-  twitter: '',
-  twitterHandle: '',
-  linkedin: '',
+  twitter: 'https://twitter.com/johnkdunyo',
+  twitterHandle: '@johnkdunyo',
+  linkedin: 'https://www.linkedin.com/in/johnkdunyo/',
   newsletter: '',
   resume: '/static/John_Kwame_Dunyo_CV.pdf',
   snippets:

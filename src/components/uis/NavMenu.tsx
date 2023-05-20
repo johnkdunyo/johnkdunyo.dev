@@ -8,6 +8,7 @@ import LightLogo from "public/bcoyerlogo_white.svg";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
+import MainLogo from "public/johnkdunyo.jpg";
 
 interface INavItmeProps {
   href: string;
@@ -48,29 +49,29 @@ function NavMenu({}) {
         <div className="flex justify-start lg:w-0 lg:flex-1">
           <span className="sr-only">Profile Picture</span>
           <Link href="/" passHref>
-            <span className="block dark:hidden">
+            <span className="block ">
               <Image
                 alt="jon dexter "
                 height={38}
                 width={38}
-                src={DarkLogo}
-                blurDataURL={DarkLogo}
-                className="rounded-full"
+                src={MainLogo}
+                // blurDataURL={MainLogo}
+                className="rounded-full border"
               />
             </span>
           </Link>
-          <Link href="/" passHref>
+          {/* <Link href="/" passHref>
             <span className="hidden dark:block">
               <Image
                 alt="jon dexter "
                 height={38}
                 width={38}
-                src={LightLogo}
-                blurDataURL={LightLogo}
+                src={MainLogo}
+                // blurDataURL={MainLogo}
                 className="rounded-full"
               />
             </span>
-          </Link>
+          </Link> */}
         </div>
         <div className="-my-2 -mr-2 md:hidden" onClick={() => setIsOpen(true)}>
           <div className="bg-gray-200 dark:bg-midnight text-gray-600 dark:text-gray-300 rounded-full p-3.5 inline-flex items-center justify-center hover:text-gray-700 hover:bg-gray-300 cursor-pointer focus:outline-none general-ring-state">
@@ -104,8 +105,8 @@ function NavMenu({}) {
           <NavItem href="/" text="Home" />
           <NavItem href="/about" text="About" />
           <NavItem href="/projects" text="Projects" />
-          <NavItem href="/blog" text="Blog" />
-          <NavItem href="/community-wall" text="Community wall" />
+          {/* <NavItem href="/blog" text="Blog" /> */}
+          {/* <NavItem href="/community-wall" text="Community wall" /> */}
         </nav>
 
         <div className="items-center justify-end hidden md:flex md:flex-1 lg:w-0">

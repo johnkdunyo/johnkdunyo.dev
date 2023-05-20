@@ -9,6 +9,7 @@ import { ButtonType } from "@/lib/types";
 import CustomLink from "@/components/uis/CustomLink";
 import { TimelineItem } from "@/components/uis/TimelineItem";
 import workExperienceData from "@/data/workExperienceData";
+import { Parallax } from "@/components/animations/Parallax";
 
 export default function About() {
   const { push } = useRouter();
@@ -49,17 +50,19 @@ export default function About() {
         power purchasing platform that serves over 2 million customers in Ghana.
       </p>
       <div>
-        <div className="hidden md:block md:float-left">
-          <Image
-            className="md:mr-8"
-            src="/avatar-working.png"
-            placeholder="blur"
-            blurDataURL="/avatar-working.png"
-            width={380}
-            height={428}
-            alt={"article cover"}
-          />
-        </div>
+        <Parallax clampFinal offset={120}>
+          <div className="hidden md:block md:float-left border">
+            <Image
+              className="md:mr-8"
+              src="/avatar-working.png"
+              placeholder="blur"
+              blurDataURL="/avatar-working.png"
+              width={380}
+              height={428}
+              alt={"article cover"}
+            />
+          </div>
+        </Parallax>
         <p>
           While at Broadspecturm, I worked as a full-stack engineer at{" "}
           <CustomLink href="http://kurz.ai/">Kurz.ai</CustomLink> where I helped

@@ -7,17 +7,18 @@ const navigation = {
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
     { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
+    // { name: "Blog", href: "/blog" },
   ],
   specifics: [
-    { name: "Stats", href: "/stats" },
-    { name: "Community wall", href: "/community-wall" },
-    { name: "Toolbox", href: "/toolbox" },
-    { name: "Speaking", href: "/speaking" },
+    // { name: "Stats", href: "/stats" },
+    { name: "Community Engagement", href: "" },
+    // { name: "Toolbox", href: "/toolbox" },
+    // { name: "Speaking", href: "/speaking" },
   ],
   extra: [
-    { name: "Changelog", href: "/changelog" },
-    { name: "Meet up", href: "/meetup" },
+    // { name: "Changelog", href: "/changelog" },
+    // { name: "Meet up", href: "/meetup" },
+    { name: "", href: "" },
   ],
   social: [
     {
@@ -176,14 +177,14 @@ function Footer() {
                       </span>
                     </Link>
                   ))}
-                  <a
+                  {/* <a
                     target="_blank"
                     href={siteMetadata.newsletter}
                     className="block text-base text-gray-600 no-underline hover:text-gray-800 dark:hover:text-gray-300 dark:text-gray-400 hover:underline"
                     rel="noreferrer"
                   >
                     Newsletter
-                  </a>
+                  </a> */}
                   <a
                     target="_blank"
                     href={siteMetadata.resume}
@@ -192,14 +193,14 @@ function Footer() {
                   >
                     Resume
                   </a>
-                  <a
+                  {/* <a
                     target="_blank"
                     href={siteMetadata.snippets}
                     className="block text-base text-gray-600 no-underline hover:text-gray-800 dark:hover:text-gray-300 dark:text-gray-400 hover:underline"
                     rel="noreferrer"
                   >
                     Snippets
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>

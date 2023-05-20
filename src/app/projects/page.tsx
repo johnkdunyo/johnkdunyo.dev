@@ -1,11 +1,13 @@
 import Container from "@/components/Layouts/Container";
 import Image from "next/legacy/image";
+import MyProjects from "@/data/projectData";
 
 interface SingleProjectProp {
   imgURL: string;
   title: string;
   shortDescription: string;
   href?: string;
+  id: number;
 }
 
 interface ButtonLinkProps {
@@ -43,6 +45,76 @@ const ButtonLink = ({ href, text }: ButtonLinkProps) => {
   );
 };
 
+const SingleProject = ({
+  imgURL,
+  title,
+  shortDescription,
+  href = "/singleproject",
+  id,
+}: SingleProjectProp) => {
+  const isEven = id % 2 === 0;
+  return (
+    <>
+      {isEven ? (
+        <div
+          className={`relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-purple-50 dark:from-purple-900/50 dark:to-fuchsia-700 to-fuchsia-300 dark:border-slate-700 border-slate-100 h-full`}
+        >
+          <div
+            className={`w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-300 dark:via-fuchsia-600 to-transparent`}
+          ></div>
+          <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
+            <div className="order-last m-5 border items-end flex">
+              <Image
+                objectFit="fill"
+                src={imgURL}
+                placeholder="blur"
+                blurDataURL={imgURL}
+                width={1204}
+                height={739}
+                layout="intrinsic"
+                alt={"Bundle, LLC on a Macbook Pro"}
+              />
+            </div>
+
+            <div className=" flex justify-end items-end ">
+              <div className="text-center md:text-left m-4 ">
+                <h2 className="mt-0">{title}</h2>
+                <p>{shortDescription}</p>
+                <ButtonLink text="Visit Sample Project1" href={href} />
+              </div>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div className="relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-slate-50 dark:from-slate-800 dark:to-blue-900 to-blue-300 dark:border-slate-700 border-slate-100">
+          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-600 to-transparent"></div>
+          <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
+            <div className="order-last m-5  border items-end flex">
+              <Image
+                objectFit="fill"
+                src={imgURL}
+                placeholder="blur"
+                blurDataURL={imgURL}
+                width={1204}
+                height={739}
+                layout="intrinsic"
+                alt={"Bundle, LLC on a Macbook Pro"}
+              />
+            </div>
+
+            <div className=" flex justify-end items-end ">
+              <div className="text-center md:text-left m-4 ">
+                <h2 className="mt-0">{title}</h2>
+                <p>{shortDescription}</p>
+                <ButtonLink text="Visit Sample Project1" href={href} />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
 const SingleProjectTypeRed = ({
   imgURL,
   title,
@@ -126,20 +198,23 @@ export default function Projects() {
       </h1>
 
       <div className="flex flex-col gap-10">
-        <SingleProjectTypeRed
+        {MyProjects &&
+          MyProjects.map((project) => (
+            <SingleProject
+              key={project.id}
+              title={project.projectTitle}
+              shortDescription={project.shortDescription}
+              imgURL={project.mainImageURL}
+              id={project.id}
+            />
+          ))}
+        <SingleProject
           title="Project Name"
           shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,"
           imgURL="/bsl-final.png"
-        />
-
-        <SingleProjectTypeBlue
-          title="Project Name"
-          shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,"
-          imgURL="/bsl-final.png"
+          id={0}
         />
       </div>
     </Container>
