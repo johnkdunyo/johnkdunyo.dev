@@ -13,7 +13,7 @@ interface projectData {
 }
 
 
-const MyProjects : projectData[] = [
+const ProjectsData : projectData[] = [
     {
         id: 0,
         projectTitle: "BSL Corporate Website",
@@ -35,6 +35,8 @@ const MyProjects : projectData[] = [
         industry: "Telecoms & Fintech",
         projectURL: "https://bsl.com.gh",
         techStacks: ["Next js", "React js"],
+        desktopImages: ["/assets/bsl/bsl_web2.png", ],
+        mobileImages: ["/assets/bsl/bsl_mobile2.png", "/assets/bsl/bsl_mobile3.png"]
     },
 
     {
@@ -58,11 +60,12 @@ const MyProjects : projectData[] = [
         industry: "Fintech",
         projectURL: "https://nedco-web.bsl.com.gh",
         techStacks: ["Next js", "React js"],
-
+        desktopImages: ["/assets/bsl/bsl_web2.png", ],
+        mobileImages: ["/assets/bsl/bsl_mobile2.png", "/assets/bsl/bsl_mobile3.png"]
 
     }
 ]
 
 
 
-export default MyProjects
+export default ProjectsData

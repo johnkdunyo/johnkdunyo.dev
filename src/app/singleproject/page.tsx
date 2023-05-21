@@ -108,7 +108,7 @@ const page = () => {
             />
             <Image
               src="/assets/bsl/bsl_mobile3.png"
-              blurDataURL="/assets/bsl/bsl_mobile2.png"
+              blurDataURL="/assets/bsl/bsl_mobile3.png"
               alt="bsl"
               className="w-full rounded-[20px]"
               placeholder="blur"

@@ -1,12 +1,12 @@
 import Container from "@/components/Layouts/Container";
 import Image from "next/legacy/image";
 import MyProjects from "@/data/projectData";
+import Link from "next/link";
 
 interface SingleProjectProp {
   imgURL: string;
   title: string;
   shortDescription: string;
-  href?: string;
   id: number;
 }
 
@@ -17,10 +17,10 @@ interface ButtonLinkProps {
 
 const ButtonLink = ({ href, text }: ButtonLinkProps) => {
   return (
-    <a
+    <Link
       href={href}
-      target="_blank"
-      rel="noreferrer"
+      // target="_blank"
+      // rel="noreferrer"
       className={`group inline-flex items-center rounded-full px-6 py-1.5 font-semibold transitionbg-midnight text-white dark:bg-gray-200 dark:text-midnight hover:bg-slate-700 bg-midnight no-underline`}
     >
       {text}
@@ -41,7 +41,7 @@ const ButtonLink = ({ href, text }: ButtonLinkProps) => {
           d="M1 1l4 4-4 4"
         ></path>
       </svg>
-    </a>
+    </Link>
   );
 };
 
@@ -49,7 +49,6 @@ const SingleProject = ({
   imgURL,
   title,
   shortDescription,
-  href = "/singleproject",
   id,
 }: SingleProjectProp) => {
   const isEven = id % 2 === 0;
@@ -80,7 +79,7 @@ const SingleProject = ({
               <div className="text-center md:text-left m-4 ">
                 <h2 className="mt-0">{title}</h2>
                 <p>{shortDescription}</p>
-                <ButtonLink text="Visit Sample Project1" href={href} />
+                <ButtonLink text="Visit Project" href={`/projects/${id}`} />
               </div>
             </div>
           </div>
@@ -106,82 +105,13 @@ const SingleProject = ({
               <div className="text-center md:text-left m-4 ">
                 <h2 className="mt-0">{title}</h2>
                 <p>{shortDescription}</p>
-                <ButtonLink text="Visit Sample Project1" href={href} />
+                <ButtonLink text="Visit Project" href={`/projects/${id}`} />
               </div>
             </div>
           </div>
         </div>
       )}
     </>
-  );
-};
-const SingleProjectTypeRed = ({
-  imgURL,
-  title,
-  shortDescription,
-  href = "/singleproject",
-}: SingleProjectProp) => {
-  return (
-    <div className="relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-purple-50 dark:from-purple-900/50 dark:to-fuchsia-700 to-fuchsia-300 dark:border-slate-700 border-slate-100 h-full">
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-300 dark:via-fuchsia-600 to-transparent"></div>
-      <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
-        <div className="order-last m-5">
-          <Image
-            objectFit="fill"
-            src={imgURL}
-            placeholder="blur"
-            blurDataURL={imgURL}
-            width={1204}
-            height={739}
-            layout="intrinsic"
-            alt={"Bundle, LLC on a Macbook Pro"}
-          />
-        </div>
-
-        <div className=" flex justify-end items-end ">
-          <div className="text-center md:text-left m-4 ">
-            <h2 className="mt-0">{title}</h2>
-            <p>{shortDescription}</p>
-            <ButtonLink text="Visit Sample Project1" href={href} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const SingleProjectTypeBlue = ({
-  imgURL,
-  title,
-  shortDescription,
-  href = "/singleproject",
-}: SingleProjectProp) => {
-  return (
-    <div className="relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-slate-50 dark:from-slate-800 dark:to-blue-900 to-blue-300 dark:border-slate-700 border-slate-100">
-      <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-600 to-transparent"></div>
-      <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
-        <div className="order-last m-5">
-          <Image
-            objectFit="fill"
-            src={imgURL}
-            placeholder="blur"
-            blurDataURL={imgURL}
-            width={1204}
-            height={739}
-            layout="intrinsic"
-            alt={"Bundle, LLC on a Macbook Pro"}
-          />
-        </div>
-
-        <div className=" flex justify-end items-end ">
-          <div className="text-center md:text-left m-4 ">
-            <h2 className="mt-0">{title}</h2>
-            <p>{shortDescription}</p>
-            <ButtonLink text="Visit Sample Project1" href={href} />
-          </div>
-        </div>
-      </div>
-    </div>
   );
 };
 

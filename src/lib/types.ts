@@ -100,3 +100,18 @@ export type Language =
   | 'typescript'
   | 'wasm'
   | 'yaml';
+
+
+  export type ProjectData = {
+    id: number
+    projectTitle: string,
+    shortDescription: string
+    mainImageURL: string
+    category: string
+    industry: string
+    projectURL: string
+    projectSummary: string
+    desktopImages?: string[]
+    mobileImages?: string[]
+    techStacks: string[]
+}
