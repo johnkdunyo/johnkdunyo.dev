@@ -66,6 +66,8 @@ const CustomLink = ({ href, children }: CustomLinkProps) => {
           onMouseLeave={handleMouseLeaveLink}
           onFocus={handleMouseEnterLink}
           onBlur={handleMouseLeaveLink}
+          target="_blank"
+          rel="noreferrer"
         >
           {children}
         </Link>
@@ -96,6 +98,8 @@ const CustomLink = ({ href, children }: CustomLinkProps) => {
       </span>
       <a
         href={href}
+        target="_blank"
+        rel="noreferrer"
         className={`${isHovering && "underline"} md:hidden`}
         onMouseEnter={handleMouseEnterLink}
         onMouseLeave={handleMouseLeaveLink}

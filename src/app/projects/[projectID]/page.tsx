@@ -12,8 +12,11 @@ type Params = {
 };
 
 export async function getProjectData(id: number) {
-  const data = ProjectsData.find((project) => project.id === 0);
-  console.log("data", data);
+  console.log("debug id", id);
+  const data = ProjectsData.find((project) => project.id == id);
+  if (!data) {
+    throw new Error("No data found");
+  } else console.log("data", data);
   return data;
 }
 
@@ -44,13 +47,13 @@ const SingleTechStack = ({ value }: { value: string }) => {
   );
 };
 export default async function ProjectPage({ params: { projectID } }: Params) {
-  if (!projectID) return;
+  console.log("debug projectID", projectID);
   const projectData: Promise<ProjectData> = getProjectData(projectID);
   const project = await projectData;
 
   return (
     <Container title="Single Project Page">
-      <main className="py-5 flex flex-col gap-20">
+      <main className="py-5 flex flex-col gap-8">
         <h1>
           <span className="block text-base font-semibold tracking-wide text-center text-indigo-500 uppercase dark:text-teal-400">
             Project
@@ -61,9 +64,9 @@ export default async function ProjectPage({ params: { projectID } }: Params) {
         </h1>
         <div className="flex justify-center">
           <img
-            src="/bsl-final.png"
+            src={project.mainImageURL}
             className="w-full md:w-3/4"
-            alt="bsl-final"
+            alt={project.projectTitle}
           />
         </div>
 
@@ -87,31 +90,50 @@ export default async function ProjectPage({ params: { projectID } }: Params) {
           ></p>
         </div>
 
-        <div className="flex flex-col md:flex-row w-full justify-between  gap-8 items-center">
-          <div className="md:w-6/12 w-full">
-            <p className="">
-              Providing a mobile first developement; with focus on
-              responsiveness and speed
-            </p>
-            <img src="/assets/bsl/bsl_web2.png" alt="bsl" />
-          </div>
-          <div className="flex flex-row justify-between md:w-6/12 w-full gap-5 border">
-            {project?.mobileImages &&
-              project.mobileImages.map((img, _x) => (
-                <Image
-                  src={img}
-                  blurDataURL={img}
-                  alt={project.projectTitle}
-                  className="w-full rounded-[20px]"
-                  placeholder="blur"
-                  layout="intrinsic"
-                  objectFit="fill"
-                  height={1632}
-                  width={862}
+        {project.mobileImages && (
+          <section className="bg-white dark:bg-gray-900">
+            <div className="gap-16 items-center  px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <img
+                  src={project.desktopImages[0]}
+                  alt="bsl"
+                  className="w-full"
                 />
-              ))}
-          </div>
-        </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4 mt-8">
+                {project.mobileImages.map((img, _x) => (
+                  <img
+                    className="w-full rounded-[20px]"
+                    src={img}
+                    alt="mobile images"
+                    key={_x}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {!project.mobileImages && (
+          <section className="bg-white dark:bg-gray-900">
+            <div className="gap-16 items-center  px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <img
+                  src={project.desktopImages[0]}
+                  alt={project.projectTitle}
+                  className="w-full"
+                />
+              </div>
+              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
+                <img
+                  src={project.desktopImages[1]}
+                  alt={project.projectTitle}
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* tech stacks used */}
         <div>

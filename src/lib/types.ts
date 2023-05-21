@@ -111,7 +111,7 @@ export type Language =
     industry: string
     projectURL: string
     projectSummary: string
-    desktopImages?: string[]
+    desktopImages: string[]
     mobileImages?: string[]
     techStacks: string[]
 }

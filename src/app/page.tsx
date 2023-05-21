@@ -59,7 +59,7 @@ export default function Home() {
                   src={siteMetadata.avatarImage}
                   placeholder="blur"
                   blurDataURL={siteMetadata.avatarImage}
-                  className="col-span-1 border rounded-full border-indigo-500 dark:border-transparent"
+                  className="col-span-1 border rounded-full  dark:border-transparent"
                   layout="fixed"
                 />
               </Parallax>

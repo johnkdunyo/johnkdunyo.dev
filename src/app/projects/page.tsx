@@ -61,8 +61,8 @@ const SingleProject = ({
           <div
             className={`w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-300 dark:via-fuchsia-600 to-transparent`}
           ></div>
-          <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
-            <div className="order-last m-5 border items-end flex">
+          <div className="flex justify-between flex-col md:flex-row p-4 gap-10 w-full">
+            <div className="order-last m-5  items-end flex md:w-full">
               <Image
                 objectFit="fill"
                 src={imgURL}
@@ -71,11 +71,11 @@ const SingleProject = ({
                 width={1204}
                 height={739}
                 layout="intrinsic"
-                alt={"Bundle, LLC on a Macbook Pro"}
+                alt={"project image"}
               />
             </div>
 
-            <div className=" flex justify-end items-end ">
+            <div className=" flex justify-end items-end md:w-full">
               <div className="text-center md:text-left m-4 ">
                 <h2 className="mt-0">{title}</h2>
                 <p>{shortDescription}</p>
@@ -88,7 +88,7 @@ const SingleProject = ({
         <div className="relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-slate-50 dark:from-slate-800 dark:to-blue-900 to-blue-300 dark:border-slate-700 border-slate-100">
           <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-600 to-transparent"></div>
           <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
-            <div className="order-last m-5  border items-end flex">
+            <div className="order-last m-5   items-end flex md:w-full">
               <Image
                 objectFit="fill"
                 src={imgURL}
@@ -97,11 +97,11 @@ const SingleProject = ({
                 width={1204}
                 height={739}
                 layout="intrinsic"
-                alt={"Bundle, LLC on a Macbook Pro"}
+                alt={"project image"}
               />
             </div>
 
-            <div className=" flex justify-end items-end ">
+            <div className=" flex justify-end items-end md:w-full">
               <div className="text-center md:text-left m-4 ">
                 <h2 className="mt-0">{title}</h2>
                 <p>{shortDescription}</p>
@@ -143,7 +143,7 @@ export default function Projects() {
           shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,"
-          imgURL="/bsl-final.png"
+          imgURL="/assets/bsl/bsl-final.png"
           id={0}
         />
       </div>
