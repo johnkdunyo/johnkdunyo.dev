@@ -115,22 +115,19 @@ export default async function ProjectPage({ params: { projectID } }: Params) {
         )}
 
         {!project.mobileImages && (
-          <section className="bg-white dark:bg-gray-900">
-            <div className="gap-16 items-center  px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <img
-                  src={project.desktopImages[0]}
-                  alt={project.projectTitle}
-                  className="w-full"
-                />
-              </div>
-              <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                <img
-                  src={project.desktopImages[1]}
-                  alt={project.projectTitle}
-                  className="w-full"
-                />
-              </div>
+          <section className="md:pt-10 ">
+            <div className="  gap-x-20  items-center   mx-auto max-w-screen-xl lg:grid lg:grid-cols-2  flex-wrap">
+              {project.desktopImages.map((img, _x) => (
+                <div className={` ${_x % 2 === 0 ? "md:mt-0" : "md:-mt-60"}`}>
+                  <Image
+                    alt={project.projectTitle}
+                    src={img}
+                    blurDataURL={img}
+                    width={3456}
+                    height={2234}
+                  />
+                </div>
+              ))}
             </div>
           </section>
         )}

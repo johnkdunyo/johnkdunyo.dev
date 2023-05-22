@@ -49,7 +49,7 @@ const MyProjects : ProjectData[] = [
         industry: "Fintech",
         projectURL: "https://nedco-web.bsl.com.gh",
         techStacks: ["Next js", "React js"],
-        desktopImages: ["/assets/nedco-web/nedco-2.png", "/assets/nedco-web/nedco-3.png" ],
+        desktopImages: ["/assets/nedco-web/nedco-2.png", "/assets/nedco-web/nedco-3.png" , "/assets/nedco-web/nedco-4.png" , "/assets/nedco-web/nedco-5.png" , "/assets/nedco-web/nedco-6.png" , "/assets/nedco-web/nedco-7.png" ],
 
     },
     {
@@ -73,7 +73,7 @@ const MyProjects : ProjectData[] = [
         industry: "Fintech",
         projectURL: "https://nedco-admin.bsl.com.gh",
         techStacks: ["Next js", "React js"],
-        desktopImages: ["/assets/nedco-admin/nedco-2.png", "/assets/nedco-admin/nedco-3.png" ],
+        desktopImages: ["/assets/nedco-admin/nedco-2.png", "/assets/nedco-admin/nedco-3.png" ,"/assets/nedco-admin/nedco-4.png", "/assets/nedco-admin/nedco-5.png"],
 
     }
 ]
