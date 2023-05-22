@@ -115,7 +115,7 @@ export default async function ProjectPage({ params: { projectID } }: Params) {
         )}
 
         {!project.mobileImages && (
-          <section className="md:pt-10 border">
+          <section className="md:pt-10 ">
             <div className="  gap-x-20  items-center   mx-auto max-w-screen-xl lg:grid lg:grid-cols-2  flex-wrap">
               {project.desktopImages.map((img, _x) => (
                 <div
