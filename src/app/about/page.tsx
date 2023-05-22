@@ -21,7 +21,7 @@ export default function About() {
           About me
         </span>
         <span className="block max-w-2xl mx-auto mt-2 text-4xl font-bold leading-10 text-center sm:text-5xl">
-          Here's my story.
+          Here&apos;s my story.
         </span>
       </h1>
       <p>
@@ -51,7 +51,7 @@ export default function About() {
       </p>
       <div>
         <Parallax clampFinal offset={120}>
-          <div className="hidden md:block md:float-left border">
+          <div className="hidden md:block md:float-left ">
             <Image
               className="md:mr-8"
               src="/avatar-working.png"
@@ -72,7 +72,7 @@ export default function About() {
         <p>
           Prior to joining Broaspectrum, I worked as the software lead for the
           MEST Express startup Moreplex Company Ltd, where I helped architect
-          the company's software architectures for its growing eSkills and
+          the company&apos;s software architectures for its growing eSkills and
           eCommerce platforms. I also led the team to build an AI product
           recommender system. And more recently is the yet-to-be-launched AI
           assistant dermatologist.
@@ -110,7 +110,7 @@ export default function About() {
       <div className="flex justify-center"></div>
       <div className="mt-12 space-y-6">
         <h2 className="m-0 text-gray-900 dark:text-white">Work Experience</h2>
-        <p>Here's a brief rundown of my most recent experiences.</p>
+        <p>Here&apos;s a brief rundown of my most recent experiences.</p>
         {workExperienceData ? (
           <div>
             {workExperienceData.map((workItem, index) => (

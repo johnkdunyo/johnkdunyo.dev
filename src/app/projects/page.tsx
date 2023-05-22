@@ -138,14 +138,14 @@ export default function Projects() {
               id={project.id}
             />
           ))}
-        <SingleProject
+        {/* <SingleProject
           title="Project Name"
           shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam,"
           imgURL="/assets/bsl/bsl-final.png"
           id={0}
-        />
+        /> */}
       </div>
     </Container>
   );

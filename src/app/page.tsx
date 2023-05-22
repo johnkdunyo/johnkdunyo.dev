@@ -46,9 +46,10 @@ export default function Home() {
         <div>
           <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6">
             <h1 className="order-2 col-span-5 text-4xl leading-tight md:leading-normal md:order-1 sm:text-5xl">
-              I'm <span className="text-teal-500 dark:text-teal-400">John</span>
-              . I'm a software engineer from Ghana, with rock solid experience
-              in building complex applications with modern technology
+              I&apos;m{" "}
+              <span className="text-teal-500 dark:text-teal-400">John</span>.
+              I&apos;m a software engineer from Ghana, with rock solid
+              experience in building complex applications with modern technology
             </h1>
             <div className="order-1 md:order-2  flex justify-center">
               <Parallax clampFinal offset={30}>

@@ -11,7 +11,7 @@ type Params = {
   };
 };
 
-export async function getProjectData(id: number) {
+async function getProjectData(id: number) {
   console.log("debug id", id);
   const data = ProjectsData.find((project) => project.id == id);
   if (!data) {
@@ -115,10 +115,13 @@ export default async function ProjectPage({ params: { projectID } }: Params) {
         )}
 
         {!project.mobileImages && (
-          <section className="md:pt-10 ">
+          <section className="md:pt-10 border">
             <div className="  gap-x-20  items-center   mx-auto max-w-screen-xl lg:grid lg:grid-cols-2  flex-wrap">
               {project.desktopImages.map((img, _x) => (
-                <div className={` ${_x % 2 === 0 ? "md:mt-0" : "md:-mt-60"}`}>
+                <div
+                  className={` ${_x % 2 === 0 ? "md:mt-0" : "md:-mt-60"}`}
+                  key={_x}
+                >
                   <Image
                     alt={project.projectTitle}
                     src={img}
