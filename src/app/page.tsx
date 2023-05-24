@@ -19,7 +19,7 @@ const SingleService = ({
   imageURL: string;
 }) => {
   return (
-    <div className="w-full text-center border rounded-[20px] border-indigo-500 h-[45rem]">
+    <div className="w-full text-center border rounded-[20px] border-gray-600 h-[45rem]">
       <div className="m-5 mt-10 h-[21rem] ">
         <h1 className="text-xl">{title}</h1>
         <p className="prose-base prose  dark:prose-slate">{description}</p>
@@ -44,20 +44,24 @@ export default function Home() {
     <Container>
       <div>
         <div>
-          <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6">
-            <h1 className="order-2 col-span-5 text-4xl leading-tight md:leading-normal md:order-1 sm:text-5xl">
+          <div className="grid items-center grid-cols-1 mt-12 text-center md:mt-24 md:text-left md:grid-cols-6 ">
+            <h1 className="order-2 col-span-5 text-4xl leading-normal md:leading-normal md:order-1 sm:text-5xl ">
               I&apos;m{" "}
               <span className="text-teal-500 dark:text-teal-400">John</span>.
-              I&apos;m a software engineer from Ghana, with rock solid
-              experience in building complex applications with modern
-              technology.
+              <br />
+              <span className="text-3xl sm:text-4xl font-medium ">
+                {" "}
+                I&apos;m a software engineer from Ghana, with rock solid
+                experience in building complex applications with modern
+                technologies.
+              </span>
             </h1>
             <div className="order-1 md:order-2  flex justify-center">
-              <Parallax clampFinal offset={30}>
+              <Parallax clampFinal offset={90}>
                 <Image
                   alt="John Kwame"
-                  height={200}
-                  width={200}
+                  height={2656}
+                  width={2832}
                   src={siteMetadata.avatarImage}
                   placeholder="blur"
                   blurDataURL={siteMetadata.avatarImage}
@@ -84,9 +88,9 @@ export default function Home() {
         </div>
         <HorinzontalRule />
         <div className="mt-10">
-          <h2></h2>
+          <h2>Services</h2>
           <p>Check out a few of the services I provide.</p>
-          <div className="flex flex-col md:flex-row gap-8 w-full">
+          <div className="flex flex-col md:flex-row gap-8 w-full mt-6">
             <SingleService
               title="Product Design"
               description="I offer comprehensive Product Design services, delivering innovative and tailored solutions that captivate users. With a focus on user-centered design and the latest industry practices, I create seamless and engaging experiences. From concept to implementation, I guide clients through the entire design process, ensuring exceptional and impactful product designs."
