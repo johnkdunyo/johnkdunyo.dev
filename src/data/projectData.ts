@@ -9,7 +9,7 @@ const MyProjects : ProjectData[] = [
         shortDescription: "BSL Corporate Website is a high-performing, SEO efficient, responsive, and user-friendly website that effectively presents the BSL brand, its subsidiaries, and services, captivating and engaging potential customers, partners, and investors.",
         mainImageURL: "/assets/bsl/bsl-final.png",
         projectSummary: `
-        Welcome to the BSL Corporate Website, an impressive online platform that embodies speed, responsiveness, and SEO efficiency. 
+        The BSL (Broadspectrum Ghana Ltd) Corporate Website is an impressive online platform that embodies speed, responsiveness, and SEO efficiency. 
         This meticulously crafted website offers lightning-fast loading times and seamless adaptability across devices, ensuring an 
         exceptional browsing experience for visitors. Whether users access it from a desktop, laptop, tablet, or smartphone, 
         they can expect a visually appealing interface that effectively showcases the BSL brand, its subsidiaries, products, and services.
@@ -30,9 +30,35 @@ const MyProjects : ProjectData[] = [
         desktopImages: ["/assets/bsl/bsl_web2.png", ],
         mobileImages: ["/assets/bsl/bsl_mobile2.png", "/assets/bsl/bsl_mobile3.png"]
     },
-
     {
         id: 1,
+        projectTitle: "TECHNICplus",
+        mainImageURL: "/assets/keller/main.png",
+        shortDescription: "The TECHNICplus is an educational progressive web application (PWA) for learning practical CNC programming. It is very responsive, highly available, and ultra-fast ensuring a captivating user experience.",
+        projectSummary: `
+        The TECHNICplus application is a proprietary CNC learning tool developed exclusively for the KELLER Group. 
+        It offers customers the opportunity to engage in practical CNC programming courses, take tests, and obtain 
+        certificates. Users can enhance their knowledge and skills in CNC programming through comprehensive training 
+        provided by the application. TECHNICplus also allows users to assess their understanding through tests and earn 
+        certificates, validating their competence in the field.
+        <br/> <br/>
+        To ensure the utmost precision and accuracy in CNC programming, 
+        TECHNICplus prioritizes pixel-perfect design and high accuracy. 
+        Every element and measurement within the application is meticulously crafted to align precisely, 
+        reflecting the critical nature of CNC programming. By emphasizing accuracy, TECHNICplus equips users with the skills 
+        necessary to meet the rigorous demands and quality standards of CNC programming. With its practical courses, 
+        testing features, and commitment to precision, TECHNICplus offers a valuable learning experience for individuals 
+        seeking to excel in the field of CNC programming.
+        `,
+        category: "Educational Software",
+        industry: "Manufacturing & Engineering",
+        projectURL: "https://cnc-keller-students-web.vercel.app",
+        techStacks: ["Nextjs", "TailwindCSS", "Prisma", "Turbo", "TRPC", "Next PWA", "Use-gestures", "Zustand", "React DnD", "i18Nexus", "Pixijs", ],
+        desktopImages: ["/assets/keller/1.png", "/assets/keller/2.png", "/assets/keller/3.png", "/assets/keller/4.png", "/assets/keller/5.png"]
+    },
+
+    {
+        id: 2,
         projectTitle: "NEDCo Payment Portal (web)",
         shortDescription: "NEDCo Pay is an electronic power purchase platform, which enables customers to pay electricity bills, buy power, manage meters, monitor usage histories, and submit complaints.",
         mainImageURL: "/assets/nedco-web/nedco-1.png",
@@ -60,7 +86,7 @@ const MyProjects : ProjectData[] = [
 
     },
     {
-        id: 2,
+        id: 3,
         projectTitle: "NEDCo Admin Portal (web)",
         shortDescription: "NEDCo Pay Admin is a highly secured and advanced admin platform designed specifically for administrators to manage and oversee the whole system. They are able to monitor transactions, perform refunds and reconciliations, and manage complaints.",
         mainImageURL: "/assets/nedco-admin/nedco-1.png",
