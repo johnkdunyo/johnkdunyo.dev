@@ -1,121 +1,14 @@
+"use client";
 import Container from "@/components/Layouts/Container";
-import Image from "next/legacy/image";
 import MyProjects from "@/data/projectData";
-import Link from "next/link";
 
-interface SingleProjectProp {
-  imgURL: string;
-  title: string;
-  shortDescription: string;
-  id: number;
-}
-
-interface ButtonLinkProps {
-  href: string;
-  text: string;
-}
-
-const ButtonLink = ({ href, text }: ButtonLinkProps) => {
-  return (
-    <Link
-      href={href}
-      // target="_blank"
-      // rel="noreferrer"
-      className={`group inline-flex items-center rounded-full px-6 py-1.5 font-semibold transitionbg-midnight text-white dark:bg-gray-200 dark:text-midnight hover:bg-slate-700 bg-midnight no-underline`}
-    >
-      {text}
-      <svg
-        className={`mt-0.5 ml-2 -mr-1 stroke-2 stroke-white dark:stroke-midnight`}
-        fill="none"
-        width="10"
-        height="10"
-        viewBox="0 0 10 10"
-        aria-hidden="true"
-      >
-        <path
-          className="transition opacity-0 group-hover:opacity-100"
-          d="M0 5h7"
-        ></path>
-        <path
-          className="transition group-hover:translate-x-[3px]"
-          d="M1 1l4 4-4 4"
-        ></path>
-      </svg>
-    </Link>
-  );
-};
-
-const SingleProject = ({
-  imgURL,
-  title,
-  shortDescription,
-  id,
-}: SingleProjectProp) => {
-  const isEven = id % 2 === 0;
-  return (
-    <>
-      {isEven ? (
-        <div
-          className={`relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-purple-50 dark:from-purple-900/50 dark:to-fuchsia-700 to-fuchsia-300 dark:border-slate-700 border-slate-100 h-full`}
-        >
-          <div
-            className={`w-full h-[1px] bg-gradient-to-r from-transparent via-fuchsia-300 dark:via-fuchsia-600 to-transparent`}
-          ></div>
-          <div className="flex justify-between flex-col md:flex-row p-4 gap-10 w-full">
-            <div className="order-last m-5  items-end flex md:w-full">
-              <Image
-                objectFit="fill"
-                src={imgURL}
-                placeholder="blur"
-                blurDataURL={imgURL}
-                width={1204}
-                height={739}
-                layout="intrinsic"
-                alt={"project image"}
-              />
-            </div>
-
-            <div className=" flex justify-end items-end md:w-full">
-              <div className="text-center md:text-left m-4 ">
-                <h2 className="mt-0">{title}</h2>
-                <p>{shortDescription}</p>
-                <ButtonLink text="Visit Project" href={`/projects/${id}`} />
-              </div>
-            </div>
-          </div>
-        </div>
-      ) : (
-        <div className="relative w-full overflow-hidden border rounded-3xl bg-gradient-to-b from-slate-50 dark:from-slate-800 dark:to-blue-900 to-blue-300 dark:border-slate-700 border-slate-100">
-          <div className="w-full h-[1px] bg-gradient-to-r from-transparent via-blue-300 dark:via-blue-600 to-transparent"></div>
-          <div className="flex justify-between flex-col md:flex-row p-4 gap-10">
-            <div className="order-last m-5   items-end flex md:w-full">
-              <Image
-                objectFit="fill"
-                src={imgURL}
-                placeholder="blur"
-                blurDataURL={imgURL}
-                width={1204}
-                height={739}
-                layout="intrinsic"
-                alt={"project image"}
-              />
-            </div>
-
-            <div className=" flex justify-end items-end md:w-full">
-              <div className="text-center md:text-left m-4 ">
-                <h2 className="mt-0">{title}</h2>
-                <p>{shortDescription}</p>
-                <ButtonLink text="Visit Project" href={`/projects/${id}`} />
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
+import { OtherProjectsCard, SingleProject } from "./Components";
+import { useState } from "react";
+import Button from "@/components/uis/Button";
+import { ButtonType } from "@/lib/types";
 
 export default function Projects() {
+  const [viewMore, setViewMore] = useState(false);
   return (
     <Container ttitle="Projects - Jon Dexter">
       <h1>
@@ -138,14 +31,57 @@ export default function Projects() {
               id={project.id}
             />
           ))}
-        {/* <SingleProject
-          title="Project Name"
-          shortDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam,"
-          imgURL="/assets/bsl/bsl-final.png"
-          id={0}
-        /> */}
+
+        <div>
+          {!viewMore && (
+            <Button
+              buttonType={ButtonType.SECONDARY}
+              onButtonClick={() => setViewMore((prev) => !prev)}
+            >
+              View more
+            </Button>
+          )}
+          <div
+            className={`grid grid-cols-1 md:grid-cols-2  gap-12 mt-10 ${
+              !viewMore && "hidden"
+            } `}
+          >
+            <OtherProjectsCard
+              title="MorePlex Eskills Platform"
+              shortDescription="A platform for eskills learning for the Moreplex startup"
+              imgURLs={["/assets/moreplex-eskills/1.jpeg"]}
+              projectURL="https://eskills.moreplexgh.com"
+            />
+            <OtherProjectsCard
+              title="BSL Lunch App"
+              shortDescription="A custom lunch ordering application for the BSL group"
+              imgURLs={["/assets/lunchapp/1.jpeg", "/assets/lunchapp/2.png"]}
+              projectURL="https://bsl-lunchapp.netlify.app/"
+            />
+
+            <OtherProjectsCard
+              title="Math the Pairs"
+              shortDescription="A simple react application to match the pairs"
+              imgURLs={[
+                "/assets/matchpairs/1.png",
+                "/assets/matchpairs/2.png",
+                "/assets/matchpairs/3.png",
+              ]}
+              projectURL="https://matchthepairs.netlify.app/"
+            />
+          </div>
+
+          {viewMore && (
+            <div className="mt-10 ">
+              <Button
+                buttonType={ButtonType.SECONDARY}
+                onButtonClick={() => setViewMore((prev) => !prev)}
+              >
+                View Less
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </Container>
   );
