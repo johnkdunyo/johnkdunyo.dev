@@ -60,12 +60,12 @@ export default function Home() {
               <Parallax clampFinal offset={90}>
                 <Image
                   alt="John Kwame"
-                  height={2656}
-                  width={2832}
+                  height={656}
+                  width={832}
                   src={siteMetadata.avatarImage}
                   placeholder="blur"
                   blurDataURL={siteMetadata.avatarImage}
-                  className="col-span-1 border rounded-full  dark:border-transparent"
+                  className="col-span-1 border rounded-full  dark:border-transparent p-12 md:p-0"
                   layout="fixed"
                 />
               </Parallax>
