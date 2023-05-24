@@ -49,7 +49,8 @@ export default function Home() {
               I&apos;m{" "}
               <span className="text-teal-500 dark:text-teal-400">John</span>.
               I&apos;m a software engineer from Ghana, with rock solid
-              experience in building complex applications with modern technology
+              experience in building complex applications with modern
+              technology.
             </h1>
             <div className="order-1 md:order-2  flex justify-center">
               <Parallax clampFinal offset={30}>
