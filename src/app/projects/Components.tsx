@@ -35,8 +35,8 @@ export const ButtonLink = ({ href, text }: ButtonLinkProps) => {
   return (
     <Link
       href={href}
-      target="_blank"
-      rel="noreferrer"
+      // target="_blank"
+      // rel="noreferrer"
       className={`group inline-flex items-center rounded-full px-6 py-1.5 font-semibold transitionbg-midnight text-white dark:bg-gray-200 dark:text-midnight hover:bg-slate-700 bg-midnight no-underline`}
     >
       {text}
